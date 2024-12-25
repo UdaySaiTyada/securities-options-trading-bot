@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  trading-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    volumes:
+      - .:/app:cached
+      - ./logs:/app/logs
+    environment:
+      - PYTHONPATH=/app
+      - DEBUG=1
+    command: python -m debugpy --listen 0.0.0.0:5678 trading_bot.py
+
+  monitoring:
+    ports:
+      - "8000:8000"
+      - "5679:5679"
+    volumes:
+      - .:/app:cached
+    environment:
+      - DEBUG=1
+    command: python -m debugpy --listen 0.0.0.0:5679 -m uvicorn monitoring.app:app --host 0.0.0.0 --port 8000 --reload
+
+  redis:
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --requirepass devpassword

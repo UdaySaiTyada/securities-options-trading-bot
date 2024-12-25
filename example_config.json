@@ -1,0 +1,39 @@
+{
+    "api_credentials": {
+        "binance_api_key": "your_api_key_here",
+        "binance_api_secret": "your_api_secret_here"
+    },
+    "redis": {
+        "host": "redis",
+        "port": 6379,
+        "password": "your_redis_password",
+        "db": 0
+    },
+    "trading": {
+        "initial_portfolio_value": 100000,
+        "max_position_size": 0.2,
+        "stop_loss_percentage": 0.02,
+        "take_profit_percentage": 0.04,
+        "max_concurrent_trades": 5
+    },
+    "risk_management": {
+        "max_risk_per_trade": 0.02,
+        "max_total_risk": 0.06,
+        "correlation_threshold": 0.7
+    },
+    "technical_analysis": {
+        "rsi_period": 14,
+        "rsi_overbought": 70,
+        "rsi_oversold": 30,
+        "ema_short": 9,
+        "ema_long": 21,
+        "macd_fast": 12,
+        "macd_slow": 26,
+        "macd_signal": 9
+    },
+    "monitoring": {
+        "port": 8000,
+        "log_level": "INFO",
+        "performance_metrics_interval": 300
+    }
+}

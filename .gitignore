@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs and databases
+*.log
+*.sqlite
+logs/
+*.db
+
+# Environment variables
+.env
+.env.*
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# Project specific
+trading_data/
+backtesting_results/
+*.pkl
+*.csv
+*.json
+!example_config.json
+
+# System Files
+.DS_Store
+Thumbs.db
